@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#f5f5f7">
+    <meta name="robots" content="noindex, nofollow">
+    <title>NotePulse</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="NotePulse">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=2026.11.18-0106">
+</head>
+<body>
+
+<div class="wallpaper" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+</div>
+
+<main class="window" id="window">
+    <header class="titlebar">
+        <div class="traffic" aria-hidden="true">
+            <span class="tl tl-red"></span>
+            <span class="tl tl-yellow"></span>
+            <span class="tl tl-green"></span>
+        </div>
+
+        <nav class="tabs" id="tabs" hidden>
+            <button type="button" class="tab" id="tabHome">NotePulse</button>
+            <span class="tab-divider">/</span>
+            <span class="tab active" id="tabCurrent">Übersicht</span>
+        </nav>
+
+        <nav class="pillnav" id="pillnav" hidden>
+            <button type="button" class="pill" data-tab="overview"><span class="pill-icon" data-icon="chart"></span><span>Übersicht</span></button>
+            <button type="button" class="pill" data-tab="subjects"><span class="pill-icon" data-icon="books"></span><span>Fächer</span></button>
+        </nav>
+
+        <div class="titlebar-right" id="titlebarRight" hidden>
+            <button type="button" class="chip" id="syncChip" title="Jetzt synchronisieren">
+                <span class="chip-dot"></span>
+                <span id="syncChipText">Verbinde …</span>
+            </button>
+            <button type="button" class="icon-btn danger" id="logoutBtn" title="Abmelden"></button>
+        </div>
+    </header>
+
+    <section class="view view-auth" id="viewAuth" hidden>
+        <div class="auth-card">
+            <img class="app-icon" src="assets/icons/icon-tile.png" alt="" width="76" height="76">
+            <h1>NotePulse</h1>
+            <p class="auth-sub">Gib deinen Zugangscode ein,<br>um deine Noten zu verwalten.</p>
+
+            <form id="codeForm" class="auth-form" autocomplete="off">
+                <div class="code-field" id="codeField">
+                    <span class="code-field-icon" data-icon="lock"></span>
+                    <input type="password" id="codeInput" placeholder="Zugangscode" maxlength="32"
+                           inputmode="numeric" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Zugangscode">
+                    <button type="button" class="paste-btn" id="pasteBtn" title="Aus Zwischenablage einfügen"></button>
+                </div>
+                <button type="submit" class="btn btn-primary" id="joinBtn">Entsperren</button>
+            </form>
+
+            <div class="auth-error" id="authError" role="alert"></div>
+        </div>
+    </section>
+
+    <section class="view view-app" id="viewApp" hidden>
+        <aside class="pane pane-left">
+            <div class="side scroll" id="sidebar">
+                <button type="button" class="side-item" id="navOverview" data-nav="overview">
+                    <span class="side-icon" data-icon="chart"></span>
+                    <span class="side-name">Übersicht</span>
+                </button>
+
+                <div class="list-group side-group">Fächer</div>
+                <div class="side-subjects" id="subjectList"></div>
+            </div>
+
+            <div class="pane-foot">
+                <button type="button" class="btn btn-primary btn-wide" id="newSubjectBtn">
+                    <span class="btn-icon" data-icon="plus"></span>
+                    Neues Fach
+                </button>
+            </div>
+        </aside>
+
+        <section class="pane pane-right">
+            <div class="list-head">
+                <button type="button" class="back-btn" id="backBtn" hidden><span data-icon="back"></span>Fächer</button>
+                <h2 class="list-title" id="mainTitle">Übersicht</h2>
+                <div class="list-tools" id="mainTools"></div>
+            </div>
+            <div class="content scroll" id="content"></div>
+        </section>
+    </section>
+
+    <div class="sheet-backdrop" id="sheet" hidden>
+        <div class="sheet sheet-form" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+            <div class="sheet-head">
+                <div class="sheet-icon" id="sheetIcon"></div>
+                <div class="sheet-title" id="sheetTitle"></div>
+                <div class="sheet-sub"></div>
+                <div class="sheet-actions">
+                    <button type="button" class="icon-btn" id="sheetClose" title="Schließen (Esc)"></button>
+                </div>
+            </div>
+            <form class="sheet-body" id="sheetBody" autocomplete="off" novalidate></form>
+        </div>
+    </div>
+
+    <div class="menu" id="menu" role="menu" hidden></div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</main>
+
+<script src="assets/js/app.js?v=2026.11.18-0106"></script>
+</body>
+</html>
