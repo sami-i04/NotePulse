@@ -6,6 +6,8 @@ A grade tracker for macOS: organize subjects, add weighted grades and see your a
 
 ![NotePulse – Grade Tracker for macOS](screenshots/notepulse.png)
 
+**Download:** [latest release](../../releases/latest) → unzip, move NotePulse to Applications. On first launch right-click → Open (the app is not notarized).
+
 **Build:** macOS 14+, Xcode Command Line Tools → `./build_app.sh`
 
 **Web app:** upload `index + sql/html` to a PHP server, import `index + sql/sql/notepulse_schema.sql` into MySQL, copy `.env.example` to `.env` and fill it in.
