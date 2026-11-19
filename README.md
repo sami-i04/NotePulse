@@ -1,6 +1,8 @@
-# NotePulse
+# NotePulse – Grade Tracker for macOS
 
-A fast notes app for macOS with optional self-hosted sync. Includes a web app (PHP + MySQL) so your notes are available in the browser and on your phone.
+A grade tracker for macOS: organize subjects, add weighted grades and see your averages and charts at a glance. Optional self-hosted sync with a web app (PHP + MySQL) for browser and phone.
+
+![NotePulse – Grade Tracker for macOS](screenshots/notepulse.png)
 
 **Build:** macOS 14+, Xcode Command Line Tools → `./build_app.sh`
 
@@ -11,4 +13,4 @@ Feedback and ideas are welcome – just open an [issue](../../issues).
 MIT License © sami_i04
 
 ---
-notes app, macos notes, self-hosted notes, note sync, pwa notes, php mysql notes, swift, macos
+grade tracker, grade calculator, school grades app, student app, grade average calculator, self-hosted, pwa, php mysql, swift, macos
