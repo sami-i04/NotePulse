@@ -1,3 +1,5 @@
+<p align="center"><img src="screenshots/icon.png" width="128" alt="NotePulse app icon"></p>
+
 # NotePulse – Grade Tracker for macOS
 
 A grade tracker for macOS: organize subjects, add weighted grades and see your averages and charts at a glance. Optional self-hosted sync with a web app (PHP + MySQL) for browser and phone.
